@@ -66,3 +66,15 @@ def get(self, index):
         prev.next = HeadVal.next
 
         HeadVal = None
+
+
+每次都有這個錯，但是還在找除錯的方式
+而且要把linked-list最基本學好
+再來就是要把python重新複習，這樣邏輯才跟得上
+
+AttributeError: 'MyLinkedList' object has no attribute 'val'
+Line 30 in addAtTail (Solution.py)
+Line 90 in __helper_select_method__ (Solution.py)
+Line 137 in _driver (Solution.py)
+Line 147 in <module> (Solution.py)
+Console 
