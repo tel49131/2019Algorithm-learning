@@ -1,0 +1,68 @@
+<Linked-list learning>
+
+class Node:
+        def __init__(self,dataval=0):
+                self.dataval = 0
+                self.nextval = None
+class MyLinkedList:   
+        def _init_(self):
+            self.headval = None
+
+def get(self, index):
+        p = self.headval
+        if p == None :
+            return -1
+        else:
+            i = 1
+            while i <= index:
+                p = p.next
+                i += 1
+            return p.val
+        
+
+        def add_left(self, newdata):
+             NewNode = Node(newdata)
+            
+        
+
+        def append(self, newdata):
+            NewNode = Node(newdata)
+            if self.headval is None:
+                self.headval = NewNode
+                return
+            laste = self.headval
+            while(laste.nextval):
+                laste = laste.nextval
+            laste.nextval=NewNode
+        
+
+        def insert(self, middle_node,newdata):
+            if not middle_node:
+                print("The mentioned node is absent")
+            return
+        NewNode = Node(newdata)
+        NewNode.nextval = middle_node.nextval
+        middle_node.nextval = NewNode
+
+
+        def remove(self, removekey):
+            HeadVal = self.head
+
+        if not HeadVal:
+            if (HeadVal.data == Removekey):
+                self.head = HeadVal.next
+                HeadVal = None
+                return
+
+        while not HeadVal:
+            if HeadVal.data == Removekey:
+                break
+            prev = HeadVal
+            HeadVal = HeadVal.next
+
+        if (HeadVal == None):
+            return
+
+        prev.next = HeadVal.next
+
+        HeadVal = None
