@@ -3,22 +3,4 @@
 
 # problem 2
 # def 是包含在class裡面的，都必須縮排，我在打的時候常常沒有把def縮排，導致後面的code不能用
-class MyLinkedList:
-        def __init__(self,data,nextnode):
-        self.val = data
-        self.next = nextnode
-        
-    def _init_(self):
-        self.head = None
-        self.count = 0
-
-    def get(self, index):
-        p = self.head
-        if self.count == 0 or index > self.count -1 :
-            return -1
-        else:
-            i = 1
-            while i <=index
-            p = p.next
-            i+=1
-            return p.val
+![](image/week2 problem2.jpg)
