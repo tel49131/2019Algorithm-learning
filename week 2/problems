@@ -1,6 +1,17 @@
+#problem 1
+#從來沒有學過class
 
 
 
 # problem 2
 # def 是包含在class裡面的，都必須縮排，我在打的時候常常沒有把def縮排，導致後面的code不能用
-![](image/week2 problem2.jpg)
+class MyLinkedList:
+        class Node:
+  def __init__(self):
+  self.val = None
+  self.next = None
+        
+        def _init_(self):
+            self.head = None
+            self.count = 0
+像這樣~~
