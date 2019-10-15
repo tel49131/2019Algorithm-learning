@@ -1,1 +1,9 @@
-
+[第一次嘗試]
+a = [2,8,4,5,9]
+def quicksort():
+    piviot = a[1]
+    for i in a:
+        if i< piviot:
+            x[j] = x[j-1]
+#是想說直接取第一個數，當作piviot，然後在一個一個進行比較
+#但我發現這樣根本就是錯的，因為quick sort 的方法著重在 分割與
