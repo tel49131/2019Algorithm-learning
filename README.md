@@ -36,7 +36,12 @@ hi! 我是安芸~ 一名德文系雙主修巨資學院的學生，這學期的�
      若實際打開每個node的內部，至少會包含(1)data來代表資料，與(2)pointer指向下一個node
  
 3. Compare Array and Linked-List
+   * 回到今天的主題，在 Python 裏，同樣是陣列，但有 array 和 list 兩種數據類型。兩者的差異在於，前者屬於 Python 模組 numpy 裡的一種數據類型，所包含的所有元素類型都必須相同；而後者則是 Python 內建的數據類型，可以包含不同的元素類型。
    
+## reference
+1. [CLASS和INSTANCE介紹] https://blog.csdn.net/Hansry/article/details/79639676
+2. [python desigh linked-list leetcode] https://blog.csdn.net/fuxuemingzhu/article/details/81026066
+3. [array and linked-list] https://ithelp.ithome.com.tw/articles/10203422
 
 # week 3
  > Topic: Stack and Queue
