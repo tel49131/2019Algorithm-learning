@@ -5,5 +5,36 @@ def quicksort():
     for i in a:
         if i< piviot:
             x[j] = x[j-1]
-#是想說直接取第一個數，當作piviot，然後在一個一個進行比較
-#但我發現這樣根本就是錯的，因為quick sort 的方法著重在 分割與
+-------------------------------------------------------------------------------------            
+#TypeError                                 Traceback (most recent call last)
+<ipython-input-8-85b0e214b75b> in <module>()
+----> 1 quicksort(a)
+
+TypeError: quicksort() takes 0 positional arguments but 1 was given
+
+#是想說直接取第一個數，當作piviot，然後在一個一個進行比較。
+#但我發現這樣根本就是錯的，因為quick sort 的方法著重在Divide and Conquer。
+#而且我覺得最難的地方在於設計一個迴圈讓他自己可以去分割然後做比較。
+
+
+[第二次嘗試]
+a = [2,8,4,5,9]
+def quicksort():
+    for i in a:
+        key = a[1]
+        left_point = a[i+1]
+        right_point = a[i-1]
+        if left_point < right_point:
+            a[i+1] = a[i-1]
+        else:
+            a[1] = right_point
+---------------------------------------------------------------------------------------
+#TypeError                                 Traceback (most recent call last)
+<ipython-input-8-85b0e214b75b> in <module>()
+----> 1 quicksort(a)
+
+TypeError: quicksort() takes 0 positional arguments but 1 was given
+#在網路上找除錯方式
+ quicksort()這個函數不需要參數，但是函數卻被傳遞了一個參數，可是我們調用quicksort()函數的時候，並沒有寫參數，但為什麼會出現這樣的Error呢？
+ 是因為“每個與類相關聯的方法調用都自動傳遞實參self ，它是一個指向實例本身的引用”_init_中的參數self會自動傳遞給 quicksort()，而 quicksort()在定義的時候沒有形參，就會報錯。
+#修改方法：def  quicksort():改為def  quicksort(self):
