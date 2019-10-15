@@ -38,3 +38,6 @@ TypeError: quicksort() takes 0 positional arguments but 1 was given
  quicksort()這個函數不需要參數，但是函數卻被傳遞了一個參數，可是我們調用quicksort()函數的時候，並沒有寫參數，但為什麼會出現這樣的Error呢？
  是因為“每個與類相關聯的方法調用都自動傳遞實參self ，它是一個指向實例本身的引用”_init_中的參數self會自動傳遞給 quicksort()，而 quicksort()在定義的時候沒有形參，就會報錯。
 #修改方法：def  quicksort():改為def  quicksort(self):
+
+[第三次嘗試]
+
