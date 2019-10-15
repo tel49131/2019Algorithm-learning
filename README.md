@@ -19,6 +19,8 @@ hi! 我是安芸~ 一名德文系雙主修巨資學院的學生，這學期的�
 - [week 3](#week-3)
 - [week 4](#week-4)
 - [week 5](#week-5)
+- [week 6](#week-6)
+- [week 7](#week-7)
 
 # week 2
  > Topic: Design a linked list
@@ -71,4 +73,11 @@ hi! 我是安芸~ 一名德文系雙主修巨資學院的學生，這學期的�
 3. [插入排序法] https://rust-algo.club/sorting/insertion_sort/
 
 # week 5
+ > Topic: Quick sort
+ 
+
+# week 6
+ > Topic: 
+
+# week 7
  > Topic: 
