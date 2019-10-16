@@ -1,1 +1,184 @@
+[第一次嘗試]
+a = [2,8,4,5,9]
+def quicksort():
+    piviot = a[1]
+    for i in a:
+        if i< piviot:
+            x[j] = x[j-1]
+-------------------------------------------------------------------------------------            
+#TypeError                                 Traceback (most recent call last)
+<ipython-input-8-85b0e214b75b> in <module>()
+----> 1 quicksort(a)
 
+TypeError: quicksort() takes 0 positional arguments but 1 was given
+
+#是想說直接取第一個數，當作piviot，然後在一個一個進行比較。
+#但我發現這樣根本就是錯的，因為quick sort 的方法著重在Divide and Conquer。
+#而且我覺得最難的地方在於設計一個迴圈讓他自己可以去分割然後做比較。
+
+
+[第二次嘗試]
+a = [2,8,4,5,9]
+def quicksort():
+    for i in a:
+        key = a[1]
+        left_point = a[i+1]
+        right_point = a[i-1]
+        if left_point < right_point:
+            a[i+1] = a[i-1]
+        else:
+            a[1] = right_point
+---------------------------------------------------------------------------------------
+#TypeError                                 Traceback (most recent call last)
+<ipython-input-8-85b0e214b75b> in <module>()
+----> 1 quicksort(a)
+
+TypeError: quicksort() takes 0 positional arguments but 1 was given
+#在網路上找除錯方式
+ quicksort()這個函數不需要參數，但是函數卻被傳遞了一個參數，可是我們調用quicksort()函數的時候，並沒有寫參數，但為什麼會出現這樣的Error呢？
+ 是因為“每個與類相關聯的方法調用都自動傳遞實參self ，它是一個指向實例本身的引用”_init_中的參數self會自動傳遞給 quicksort()，而 quicksort()在定義的時候沒有形參，就會報錯。
+#修改方法：def  quicksort():改為def  quicksort(self):
+
+[第三次嘗試]
+def quicksort(list):
+    left=[]            #先創造出一個list存比pivot小的數
+    right=[]           #再創造出一個list存比pivot大的數
+    pivotlist=[]       #之後創造出一個list存pivot的數
+    if len(list)<=1:
+        return 
+    else:
+        pivot=list[0]
+        for i in list:
+            if i<pivot:          #比pivot小就把它加進left
+                left.append(i)
+            elif i>pivot:        #比pivot大就把它加進right
+                right.append(i)
+            else:
+                pivotlist.append(i)  #剩下的就一定是pivot
+    left = quicksort(left)
+    right = quicksort(right)
+    return left+pivotlist+right
+
+a=[4,2,7,9,3,8]
+quicksort(a)
+----------------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-17-85b0e214b75b> in <module>()
+----> 1 quicksort(a)
+
+<ipython-input-15-054c4aaa79a8> in quicksort(list)
+     14             else:
+     15                 pivotlist.append(i)
+---> 16     left = quicksort(left)
+     17     right = quicksort(right)
+     18     return left+pivotlist+right
+
+<ipython-input-15-054c4aaa79a8> in quicksort(list)
+     16     left = quicksort(left)
+     17     right = quicksort(right)
+---> 18     return left+pivotlist+right
+
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'list'
+#這次用與以往不同的方法，想說用個簡單方法就是創造一個空間，將切割出來的值分別放入不同的list裡，最後再加以合併
+#但是這次的錯誤，我除錯不了，網路上也沒有較精準的解答(這部分下次上課還要問一下老師)
+
+[第四次嘗試]
+left=[]
+right=[]
+pivotlist=[]
+def quicksort(list):
+    if len(list)<=1:
+        return 
+    else:
+        pivot=list[0]
+        for i in list:
+            if i<pivot:
+                left.append(i)
+            elif i>pivot:
+                right.append(i)
+            else:
+                pivotlist.append(i)
+    return left+pivotlist+right
+    
+a=[4,2,7,9,3,8]
+quicksort(a)
+#結果答案為
+Out[23]:
+[2, 3, 4, 7, 9, 8]
+#原本想說很開心做出來，但是認真一看發現最後兩個數沒排到
+#這次我把左邊跟右邊的list先定義出來，在做quick sort，然後分別把值加進去，然後最後回傳三個list加起來的結果
+#但我還要想想最後兩個數，為啥沒排到.....
+
+
+[第五次嘗試]
+left=[]
+right=[]
+pivotlist=[]
+def quicksort(list):
+    if len(list)<=1:
+        return 
+    else:
+        pivot=list[0]
+        for i in list:
+            if i<pivot:
+                left.append(i)
+            elif i>pivot:
+                right.append(i)
+            else:
+                pivotlist.append(i)
+    return quicksort(left)+pivotlist+quicksort(right)
+a=[4,2,7,9,3,8]
+quicksort(a)
+---------------------------------------------------------------------------
+RecursionError                            Traceback (most recent call last)
+<ipython-input-32-85b0e214b75b> in <module>()
+----> 1 quicksort(a)
+
+<ipython-input-30-64b602c34aa9> in quicksort(list)
+     14             else:
+     15                 pivotlist.append(i)
+---> 16     return quicksort(left)+pivotlist+quicksort(right)
+
+... last 1 frames repeated, from the frame below ...
+
+<ipython-input-30-64b602c34aa9> in quicksort(list)
+     14             else:
+     15                 pivotlist.append(i)
+---> 16     return quicksort(left)+pivotlist+quicksort(right)
+
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+#又回去重看我的code發現我沒有sort左邊和右邊的值，只是把他們分別加入而已
+#所以我就用quicksort又再去排他，沒想到錯了....
+#我這錯誤好像是甚麼超過最大遞迴深度，其實看不太懂....(這部分也是要問一下老師)
+
+[第六次嘗試]
+def quick_sort(list): 
+    small = []
+    big = []
+    keylist = []
+
+    if len(list) <= 1:
+        return list
+
+    else:
+        key = list[0] 
+        for i in list:
+            if i < key: 
+                small.append(i)
+            elif i > key: 
+                big.append(i)
+            else:
+                keylist.append(i)
+
+    small = quick_sort(small)
+    big = quick_sort(big)
+    return small + keylist + big
+    
+ a=[2,9,3,7,6]
+quick_sort(a)
+-------------------------------------------------------------------------------
+Out[4]:
+[2, 3, 6, 7, 9]
+
+#這次我重新好好地打一遍，雖然有再網上學習一下，但是是自己打出來的所以很開心
