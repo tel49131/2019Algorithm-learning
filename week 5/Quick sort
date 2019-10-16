@@ -150,6 +150,7 @@ RecursionError: maximum recursion depth exceeded while calling a Python object
 
 #又回去重看我的code發現我沒有sort左邊和右邊的值，只是把他們分別加入而已
 #所以我就用quicksort又再去排他，沒想到錯了....
+#我這錯誤好像是甚麼超過最大遞迴深度，其實看不太懂....(這部分也是要問一下老師)
 
 
 
