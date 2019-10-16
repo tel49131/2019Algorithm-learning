@@ -83,7 +83,31 @@ TypeError: unsupported operand type(s) for +: 'NoneType' and 'list'
 #但是這次的錯誤，我除錯不了，網路上也沒有較精準的解答(這部分下次上課還要問一下老師)
 
 [第四次嘗試]
-
+left=[]
+right=[]
+pivotlist=[]
+def quicksort(list):
+    if len(list)<=1:
+        return 
+    else:
+        pivot=list[0]
+        for i in list:
+            if i<pivot:
+                left.append(i)
+            elif i>pivot:
+                right.append(i)
+            else:
+                pivotlist.append(i)
+    return left+pivotlist+right
+    
+a=[4,2,7,9,3,8]
+quicksort(a)
+#結果答案為
+Out[23]:
+[2, 3, 4, 7, 9, 8]
+#原本想說很開心做出來，但是認真一看發現最後兩個數沒排到
+#這次我把左邊跟右邊的list先定義出來，在做quick sort，然後分別把值加進去，然後最後回傳三個list加起來的結果
+#但我還要想想最後兩個數，為啥沒排到.....
 
 
 
