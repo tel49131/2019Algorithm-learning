@@ -110,6 +110,46 @@ Out[23]:
 #但我還要想想最後兩個數，為啥沒排到.....
 
 
+[第五次嘗試]
+left=[]
+right=[]
+pivotlist=[]
+def quicksort(list):
+    if len(list)<=1:
+        return 
+    else:
+        pivot=list[0]
+        for i in list:
+            if i<pivot:
+                left.append(i)
+            elif i>pivot:
+                right.append(i)
+            else:
+                pivotlist.append(i)
+    return quicksort(left)+pivotlist+quicksort(right)
+a=[4,2,7,9,3,8]
+quicksort(a)
+---------------------------------------------------------------------------
+RecursionError                            Traceback (most recent call last)
+<ipython-input-32-85b0e214b75b> in <module>()
+----> 1 quicksort(a)
+
+<ipython-input-30-64b602c34aa9> in quicksort(list)
+     14             else:
+     15                 pivotlist.append(i)
+---> 16     return quicksort(left)+pivotlist+quicksort(right)
+
+... last 1 frames repeated, from the frame below ...
+
+<ipython-input-30-64b602c34aa9> in quicksort(list)
+     14             else:
+     15                 pivotlist.append(i)
+---> 16     return quicksort(left)+pivotlist+quicksort(right)
+
+RecursionError: maximum recursion depth exceeded while calling a Python object
+
+#又回去重看我的code發現我沒有sort左邊和右邊的值，只是把他們分別加入而已
+#所以我就用quicksort又再去排他，沒想到錯了....
 
 
 
