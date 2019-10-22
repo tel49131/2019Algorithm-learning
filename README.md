@@ -102,7 +102,21 @@ hi! 我是安芸~ 一名德文系雙主修巨資學院的學生，這學期的�
 # week 6
  > Topic: Heap Sort
  1. What's Heap Sort?
+    * 堆積排序(Heap Sort)演算法是利用完全二元樹(Complete Binary Tree)，也就是堆積(Heap)結構來完成排序的演算法。
+    * 堆積排序有法兩個大步驟，第一個是把要排序的陣列製作成「最小堆積」(Min Heap)或是「最大堆積」(Max Heap)。
     
+ 2. What's Heap Three?
+    * 二元樹的一種 ⇒ 每個父節點最多兩個子節點
+    * 堆積樹為完全二元樹(Complete Binary Tree)的一種
+    * 根據上面的介紹，Heap Sort 可以用兩種方法，第一種是「最小堆積(Min Heap)：父節點的值小於子節點」、第二種是「最大堆積(Max Heap)：父節點的值大於       子節點」。在 min heap裡root一定是所有節點最小的，而在 max heap裡root一定是所有節點最大的。
+    (放圖)
+    
+    
+ ## reference
+1. [堆積排序法(Heap Sort)] https://magiclen.org/heap-sort/
+2. [[演算法] 堆積排序法(Heap Sort)] http://notepad.yehyeh.net/Content/Algorithm/Sort/Heap/Heap.php
+3. [淺談quick sort] https://blog.kuoe0.tw/posts/2013/03/15/sort-about-quick-sort/
+4. [it幫忙 quick sort] https://ithelp.ithome.com.tw/articles/10202330?sc=iThelpR
 
 # week 7
  > Topic: 
