@@ -120,3 +120,122 @@ hi! 我是安芸~ 一名德文系雙主修巨資學院的學生，這學期的�
 
 # week 7
  > Topic: 
+ 
+# week 8
+ > Topic: Binary tree
+ 
+ 
+ ## reference
+
+
+
+# week 9
+ > Topic: Binary search tree
+ 「二元搜尋樹」。放大量數字並且進行排序的資料結構。原理是 Divide and Conquer ，Root居中，左子樹較小或相等，右子樹較大，然後遞迴分割下去。
+ 「Divide and Conquer」。將大問題不斷切割成兩個或多個小問題，這樣的過程稱作「Divide」，當切割到最後的小問題，若簡單到可以直接解決，就直接使用程式解決，根據問題的需求決定是否要將小問題的解合併或組合成大問題的解，這樣的過程稱作「Conquer」，這是一種演算法解題策略，屬於由上而下(top-down)的解題策略。
+ 
+ ## reference
+1. https://sites.google.com/site/zsgititit/home/jin-jiec-cheng-shi-she-ji/fen-er-zhi-zhi-divide-and-conquer-yu-er-yuan-sou-xun-binary-search
+2.http://www.csie.ntnu.edu.tw/~u91029/Order.html
+
+
+# week 10
+ > Topic: Red Black tree
+ 
+ 
+ ## reference
+
+
+# week 11
+ > Topic: Hash table & Hash function
+ Hash Table 是儲存 key,value這種mapping關係的一種資料結構。就是用Hash函數運算出來的值，根據key來儲存在數據結構中。存放這些值的數組就稱為Hash Table。Hash Table主要是希望能夠將存放資料的Table大小調到「真正會存放進去Table的資料數量」，也就是「有用到的key數量」。
+ 
+總而言之，Hash Table就是將key(像老師給的範例是用字串)，我們通過Hash Function然後把他們存到這個類似抽屜的資料結構，這就是Hash Table。
+但是，
+Hash Table很有可能發生Collision，簡單來說Collision就是兩筆資料會存進同一個Table之slot的情形，這樣會讓查詢資料失敗。舉例來說，我們要item1的key但是卻回傳item2的key。
+
+Hash Function是將不定長度訊息的輸入，用演算法將他演算程固定長度的Hash值的輸出，而且所算出來的Hash值必須符合兩個主要條件：
+1.	由Hash Value是無法反推出原來的訊息
+2.	Hash Value必須隨明文改變而改變
+這樣有點深奧難懂，舉例來說，Hash Function就像是一台果汁機，我們把火龍果還有蘋果(data)，利用果汁機(Hash Function)打一打，出來的是火龍果蘋果汁。這個火龍果蘋果汁是獨一無二，而且沒有辦法變回原來的火龍果和蘋果。
+之後如果我們把火龍果換成香蕉，打出來的汁也會改變，也就是說經過Hash Function後的值也會跟著改變。
+Hash Function其實有很多演算法，我舉例一種老師說的演算法：
+1.	Division Method
+
+(Division Method)
+就是把大範圍的資料對應到小範圍的裡面，最簡單的方式就是利用取餘數的方式。假設mod是8，那麼
+	H(16) = 15 mod 8 = 7 放在第7個抽屜
+	H(25) = 25 mod 8 = 1 放在第1個抽屜
+以此類推。而此方法最大的優點就是速度非常的快，只要做一次餘數運算就可以。
+這個mod可以自己去斟酌，自己去衡量怎麼樣設會比較好。
+
+ 
+ ## reference
+1.https://blog.techbridge.cc/2017/01/21/simple-hash-table-intro/
+2.http://alrightchiu.github.io/SecondRound/hash-tableintrojian-jie.html
+3.https://ithelp.ithome.com.tw/articles/10208884
+
+# week 12
+ > Topic: Breadth-First Search
+ 
+ BFS原理
+Breadth-First-Search 廣度優先搜尋演算法，又可以稱為寬度優先搜尋法或是橫向修先搜尋，是一種圖形搜尋演算法。講Breadth-First-Search之前要先了解甚麼是圖形搜尋演算法，這樣對BFS的原理才好理解。
+圖形搜尋演算法(Graph Traversal)，雖然中文翻作圖，但不是我們平常所想像的那種圖，而是由數個點和數個邊所構成的一張圖，點與點之間是由邊連接，表示點之間是有關係的。
+
+BFS類似於二交叉樹的層序遍歷演算法，其實他的基本原理很簡單，是依靠沿著樹(圖)的寬度遍歷樹的節點，首先我們挑一個起始節點v，然後從v開始，依序訪問v的鄰近還未被訪問的點w1,w2,w3…wn，然後在從w1,w2,w3…wn開始訪問鄰近還未被訪問的點。然後再從這些訪問過的點去接著訪問那些訪問過的點的鄰近點，就這樣一直下去，直到每個點都被訪問完。BFS就是把同一深度(level)的節點走訪完，再繼續向下一個深度搜尋，直到找到目的節點或遍尋全部節點。(參照我上面的流程圖)。BFS屬於盲目搜索(uninformed search)是利用佇列(Queue)來處理，通常以迴圈的方式呈現。
+ 
+ 
+ ## reference
+1.http://simonsays-tw.com/web/DFS-BFS/BreadthFirstSearch.html
+2.https://www.itread01.com/content/1541841612.html
+3.https://jason-chen-1992.weebly.com/home/-graph-searching-methods
+
+# week 13
+ > Topic: Depth-First Search
+ Depth-First-Search深度優先搜尋演算法，是一種遍歷樹或圖形搜尋的演算法。DFS的原理其實也很簡單，是依靠沿著樹(圖)的深度遍歷樹的節點，儘可能深的搜尋樹的分支。當起始節點v的所在邊都己被探尋過，要回溯到發現節點v的那條邊的起始節點。這個過程會一直進行到已發現從源節點可達的所有節點為止。如果還存在未被發現的節點，則選擇其中一個作為源節點並重複以上過程，整個行程反覆進行直到所有節點都被訪問完為止。屬於盲目搜尋。
+ 
+ 
+ ## reference
+1.https://www.itread01.com/content/1546369025.html
+
+
+# week 14
+ > Topic: Minimum Spanning Tree
+最為代表是Kruskal
+Kruskal是採用邊貪心策略。最基本的就是在初始狀態時隱去圖中的所有邊，每個點都是一個個體，然後接下來就按步驟
+1.	對所有的邊按邊權從小到大進行排序
+2.	然後按邊權從小到大試所有的邊，如果現在測的邊所連線的兩個頂點不再同一個連通塊中，則可以取用這條邊
+3.	執行第二個步驟，直到取到邊的個數是點的個數少1
+4.	注意不能形成circle
+
+ 
+ ## reference
+1.https://ithelp.ithome.com.tw/articles/10209593
+2.https://www.youtube.com/watch?v=NLp9C7AvJhk
+3.http://alrightchiu.github.io/SecondRound/shortest-pathintrojian-jie.html
+4.https://wiki.mbalib.com/zh-tw/Dijkstra%E7%AE%97%E6%B3%95
+5.https://www.youtube.com/watch?v=wuU4DDEUu1w
+6.https://sites.google.com/site/zsgititit/home/jin-jiec-cheng-shi-she-ji-2/zui-xiao-sheng-cheng-shu
+
+# week 15
+ > Topic: Shortest Path
+最為代表是Dijkstra
+Dijkstra Algorithm 是最短路徑演算法的其中一種方法，其主要運作是指定一個始點到其餘各個頂點的最短路徑，也稱之為「單源最短路徑」。從始點開始，每一次一定要堅守一個原則就是由最短距離的開始，所以每次新擴展一個距離最短的時，同時也要更新與其相鄰的幾個點的距離。還有另一個重點是，所有的邊都不可能有負值，因為所以距離都會是正的。然後在更新時一定要細心，因為其實最短路徑的問題會跟邊數成正比，若有一條邊沒有看到那麼可能最不會找到最短路徑。
+
+
+ ## reference
+1.https://ithelp.ithome.com.tw/articles/10209593
+2.https://www.youtube.com/watch?v=NLp9C7AvJhk
+3.http://alrightchiu.github.io/SecondRound/shortest-pathintrojian-jie.html
+4.https://wiki.mbalib.com/zh-tw/Dijkstra%E7%AE%97%E6%B3%95
+5.https://www.youtube.com/watch?v=wuU4DDEUu1w
+6.https://sites.google.com/site/zsgititit/home/jin-jiec-cheng-shi-she-ji-2/zui-xiao-sheng-cheng-shu
+
+# week 16
+ > Topic: 區塊鏈demo & overview
+
+# week 17
+ > Topic: 期末考
+
+# week 1
+ > Topic: 學期結束
